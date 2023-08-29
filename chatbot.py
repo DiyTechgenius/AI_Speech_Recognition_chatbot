@@ -4,7 +4,8 @@ from transformers import BlenderbotSmallTokenizer, BlenderbotSmallForConditional
 import torch
 import datetime
 
-bot_name = "friday"
+your_name = "put your nick name here"
+bot_name = "put you chat bots name here"
 
 # Initialize the text-to-speech engine
 engine = pyttsx3.init()
@@ -45,7 +46,7 @@ def main():
                     user_input = r.recognize_google(audio).lower()
                     print(f"{get_timestamp()} You said:", user_input)  # Add timestamp here
                     if bot_name in user_input:
-                        speak("Hello! How can I help you?")
+                        speak("Hello! " + your_name + " How can I help you?")
                         chat_active = True
                         conversation_history = []
                     if "exit" in user_input:
